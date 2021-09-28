@@ -1,7 +1,5 @@
 // 给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串 的长度。
 
-//  
-
 // 示例 1:
 
 // 输入: s = "abcabcbb"
@@ -31,10 +29,11 @@ var lengthOfLongestSubstring = function(s) {
     let minIndex = 0
     let ans = 0   // 重复字符长度
     for (let i = 0; i < s.length; i++){
-        // 遍历数组，如果后面 minIndex 的长度有这个字符
         if (s.indexOf(s[i], minIndex) < i) {
+            // 遍历数组，如果后面 minIndex 的长度没有这个字符，则 重置 minIndex
             minIndex = s.indexOf(s[i], minIndex) + 1
         } else {
+            // 如果有重复，则重置 ans
             ans = Math.max(ans, i - minIndex + 1)
         } 
     }
