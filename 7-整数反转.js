@@ -60,15 +60,14 @@ var reverse = function (x) {
         h.push(y[i])
     }
     let n = Number(h.join(''))
-    if (n == n) {
+     if(Number(str)>2**31-1){
+        return 0;
+    }
         if (z) {
             return -n
         } else {
             return n
         }
-    } else {
-        return 0
-    }
     
     
 };
