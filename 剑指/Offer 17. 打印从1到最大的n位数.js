@@ -10,5 +10,17 @@
  * @return {number[]}
  */
 var printNumbers = function(n) {
-
+    let arr = []
+    let w = ''
+    while(n){
+        w += '9'
+        n--
+    }
+    w = parseInt(w)
+    while(w){
+        arr.unshift(w)
+        w--
+    }
+    return arr
 };
+console.log(printNumbers(3))
